@@ -1,3 +1,7 @@
+###################################################
+### Final setup original code #####################
+###################################################
+
 #%%
 # Import packages
 import pandas as pd
@@ -240,4 +244,97 @@ for index, row in snow_main.iterrows():
     snow_main['May_SA_Avg'][index] = may_five_yr_avg
     # Jun
     snow_main['Jun_SA_Avg'][index] = jun_five_yr_avg
+
+
+
+
+
+
+
+###################################################
+### Final setup 2 code ############################
+###################################################
+    
 # %%
+
+# # snow_main_new = pd.DataFrame(columns = snow_main.columns)
+# snow_main_jan = []
+
+# # Add averages
+# for location in snow_main['Site_Name']:
+
+#     df_loc_small = snow_main[snow_main['Site_Name'] == location]
+
+#     # Set up iteration vars
+#     # current_year = snow_main['Water Year']
+#     # start_year = current_year - 5
+
+#     for index, row in df_loc_small.iterrows():
+
+#         jan_five_yr_avg = 0
+#         feb_five_yr_avg = 0
+#         mar_five_yr_avg = 0
+#         apr_five_yr_avg = 0
+#         may_five_yr_avg = 0
+#         jun_five_yr_avg = 0
+
+#         # if df_loc_small['Water Year'].nunique() >= 5:
+#         if index >= 5:
+#             print(df_loc_small['Site_Name'])
+#             # jan_five_yr_avg = df_loc_small['Jan'].rolling(6, closed = 'left', min_periods = 4).mean().iloc[-1]
+#             jan_five_yr_avg = snow_main[snow_main['Site_Name'] == 'Agua Canyon']['Jan'].iloc[(index - 5):index].mean()
+#             row['Jan_SA_Avg'] = jan_five_yr_avg
+#             snow_main_jan = snow_main_jan.append(row, ignore_index = True)
+
+#         else:
+#             print('Failed to compute avg.')
+#             row['Jan_SA_Avg'] = None
+#             snow_main_jan = snow_main_jan.append(row, ignore_index = True)
+
+
+# snow_main_new = pd.DataFrame(snow_main_jan)
+# snow_main_new.to_csv('snow_main_new.csv', index=False)
+
+# %%
+
+# snow_main[snow_main['Site_Name'] == 'Agua Canyon']['Jan'].iloc[0:2].mean()
+
+
+# # %%
+# snow_main[snow_main['Site_Name'] == 'Agua Canyon']['Jan']
+
+# # %%
+# snow_main_new
+# # %%
+# snow_main_new = pd.DataFrame(columns = snow_main.columns)
+
+# df_loc_small = snow_main[snow_main['Site_Name'] == 'Agua Canyon']
+
+# for index, row in df_loc_small.iterrows():
+
+#         jan_five_yr_avg = 0
+#         feb_five_yr_avg = 0
+#         mar_five_yr_avg = 0
+#         apr_five_yr_avg = 0
+#         may_five_yr_avg = 0
+#         jun_five_yr_avg = 0
+
+#         if index >= 5:
+
+#             # jan_five_yr_avg = df_loc_small['Jan'].rolling(6, closed = 'left', min_periods = 4).mean().iloc[-1]
+#             jan_five_yr_avg = snow_main[snow_main['Site_Name'] == 'Agua Canyon']['Jan'].iloc[(index - 5):index].mean()
+#             # row['Jan_SA_Avg'] = jan_five_yr_avg
+#             print(jan_five_yr_avg)
+#             # print(row)
+#             snow_main_new = snow_main_new.append(row, ignore_index = True)
+
+
+#         else:
+#             print('Failed to compute avg.')
+#             # row['Jan_SA_Avg'] = None
+#             # snow_main_new = snow_main_new.append(row, ignore_index = True)
+
+# # %%
+
+# 
+
