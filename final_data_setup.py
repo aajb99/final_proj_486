@@ -18,6 +18,13 @@ from sklearn.inspection import PartialDependenceDisplay
 
 snow_main = pd.read_csv('site_snow.csv')
 
+#%%
+snow_main
+
+#%%
+
+snow_main['Water Year'].min()
+
 
 # %%
 
@@ -40,6 +47,8 @@ snow_main['May_SA_Avg'] = None
 # Jun
 snow_main['Jun_SA_Avg'] = None
 
+#%%
+
 # Add averages
 for index, row in snow_main.iterrows():
 
@@ -54,11 +63,12 @@ for index, row in snow_main.iterrows():
     may_five_yr_avg = 0
     jun_five_yr_avg = 0
 
-    df_current_site = snow_main[snow_main['Site_Name'] == site_name_i]
+    df_current_site = snow_main[(snow_main['Site_Name'] == site_name_i) & (snow_main['Water Year'] >= start_year)]
 
-    if snow_main[(snow_main['Site_Name'] == site_name_i) & (snow_main['Water Year'] == start_year)].shape[0] > 0:
-
+    # if snow_main[(snow_main['Site_Name'] == site_name_i) & (snow_main['Water Year'] == start_year)].shape[0] > 0:
+    # if snow_main[(snow_main['Site_Name'] == site_name_i) & (snow_main['Water Year'])]:
     # if df_current_site[df_current_site['Water Year'] == first_yr]['Jan'].values[0]:
+    if df_current_site['Water Year'].nunique() >= 5:
 
         # 5 prior years to include:
         first_yr = snow_main['Water Year'][index] - 5
@@ -66,12 +76,19 @@ for index, row in snow_main.iterrows():
         third_yr = snow_main['Water Year'][index] - 3
         fourth_yr = snow_main['Water Year'][index] - 2
         fifth_yr = snow_main['Water Year'][index] - 1
-        
-        jan_five_yr_avg = ((df_current_site[df_current_site['Water Year'] == first_yr]['Jan']).values[0]) #+ df_current_site[df_current_site['Water Year'] == second_yr]['Jan']))# + \
-                        #    df_current_site[df_current_site['Water Year'] == third_yr]['Jan'] + df_current_site[df_current_site['Water Year'] == fourth_yr]['Jan'] + \
-                            # df_current_site[df_current_site['Water Year'] == fifth_yr]['Jan']) / 5
 
-        print(jan_five_yr_avg)
+        if df_current_site[df_current_site['Water Year'] == first_yr]['Jan'].empty:
+            print('failure')
+            print(index)
+
+        else:
+
+            # jan_five_yr_avg = (((df_current_site[df_current_site['Water Year'] == first_yr]['Jan'].iloc[0]) + (df_current_site[df_current_site['Water Year'] == second_yr]['Jan'].iloc[0]) + \
+            #     (df_current_site[df_current_site['Water Year'] == third_yr]['Jan'].iloc[0]) + (df_current_site[df_current_site['Water Year'] == fourth_yr]['Jan'].iloc[0]) + \
+            #         (df_current_site[df_current_site['Water Year'] == fifth_yr]['Jan'].iloc[0])) / 5)
+
+            jan_five_yr_avg = df_current_site[df_current_site['Water Year'].isin([first_yr, second_yr, third_yr, fourth_yr, fifth_yr])]['Jan'].mean()
+            snow_main['Jan_SA_Avg'][index] = jan_five_yr_avg
 
         # feb_five_yr_avg = (df_current_site[df_current_site['Water Year'] == first_yr]['Feb'] + df_current_site[df_current_site['Water Year'] == second_yr]['Feb'] + \
         #                    df_current_site[df_current_site['Water Year'] == third_yr]['Feb'] + df_current_site[df_current_site['Water Year'] == fourth_yr]['Feb'] + \
@@ -123,10 +140,16 @@ for index, row in snow_main.iterrows():
         # Jun
         snow_main['Jun_SA_Avg'][index] = None
 
+#%%
+        
+snow_main.iloc[1060:1070]
+
 
 # %%
     
-snow_main.head(20)
+# snow_main.iloc[1060:1070]
+        
+snow_main[snow_main['Site_Name'] == 'Dills Camp']['Water Year'].nunique()
 
 
 # %%
