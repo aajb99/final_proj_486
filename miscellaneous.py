@@ -338,3 +338,13 @@ for index, row in snow_main.iterrows():
 
 # 
 
+
+
+
+
+###################################################
+### RF model code #################################
+###################################################
+
+# Checking years
+# snow_main_clean['Water Year'].unique().max()
