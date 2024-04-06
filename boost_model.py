@@ -30,6 +30,7 @@ from sklearn.neighbors import KNeighborsRegressor, KNeighborsClassifier
 from sklearn.compose import ColumnTransformer
 from sklearn.feature_selection import SelectPercentile, f_regression
 from sklearn.base import TransformerMixin
+from xgboost import XGBClassifier, XGBRFRegressor
 
 # Display all columns
 pd.set_option('display.max_columns', None)
@@ -99,8 +100,7 @@ preprocessor = ColumnTransformer(
 
 pipe_reg = Pipeline(
     steps=[("preprocessor", preprocessor),
-    ('model', RandomForestRegressor(n_estimators=500, max_leaf_nodes=16,
-                                 n_jobs=-1, random_state=42))]
+    ('model', XGBRFRegressor(n_jobs=-1, random_state=42))]
 )
 
 
@@ -109,27 +109,29 @@ pipe_reg = Pipeline(
 
 # Param grid search and running rf model
 hyperparameter_grid = {
-    'model__n_estimators': [50, 100, 300, 500, 800],
-    'model__max_leaf_nodes': [4, 8, 16, 32],
-    'model__max_depth': [1, 3, 5, 10, 15, 20]
+    'model__n_estimators': [50, 100, 500, 900],
+    'model__learning_rate': [0.05, 0.1, 0.15, 0.20],
+    'model__min_child_weight': [0.1, 0.5, 1, 2, 10],
+    'model__max_depth': [2, 3, 5, 10, 15, 20]
     }
+
 
 # GridSearch takes a while to run
 # gs = GridSearchCV(pipe_reg, param_grid=hyperparameter_grid, scoring='neg_mean_squared_error', cv=10)
 # gs.fit(data_train_X, data_train_y)
 
-rs = RandomizedSearchCV(pipe_reg, param_distributions=hyperparameter_grid, scoring='neg_mean_squared_error', cv=6)
-rs.fit(Xtrain, ytrain)
+xg_rs = RandomizedSearchCV(pipe_reg, param_distributions=hyperparameter_grid, scoring='neg_mean_squared_error', cv=6)
+xg_rs.fit(Xtrain, ytrain)
 
 # %%
 
 # View best parameters
-rs.best_params_
+xg_rs.best_params_
 
 
 # %%
 
-y_preds_test = rs.predict(Xtest)
+y_preds_test = xg_rs.predict(Xtest)
 
 
 # %%
@@ -145,3 +147,4 @@ test_comparison = pd.DataFrame({'True Val': ytest, 'Prediction': y_preds_test})
 
 # %%
 test_comparison
+# %%
