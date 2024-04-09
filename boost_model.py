@@ -109,10 +109,19 @@ pipe_reg = Pipeline(
 
 # Param grid search and running rf model
 hyperparameter_grid = {
+    # 'model__n_estimators': [50, 100, 500, 900],
+    # 'model__learning_rate': [0.05, 0.1, 0.15, 0.20],
+    # 'model__min_child_weight': [0.1, 0.5, 1, 2, 10],
+    # 'model__max_depth': [2, 3, 5, 10, 15, 20]
     'model__n_estimators': [50, 100, 500, 900],
     'model__learning_rate': [0.05, 0.1, 0.15, 0.20],
     'model__min_child_weight': [0.1, 0.5, 1, 2, 10],
-    'model__max_depth': [2, 3, 5, 10, 15, 20]
+    'model__max_depth': [2, 3, 5, 10, 15, 20],
+    'model__subsample': [0.6, 0.7, 0.8, 0.9, 1.0],
+    'model__colsample_bytree': [0.6, 0.7, 0.8, 0.9, 1.0],
+    'model__gamma': [0, 0.1, 0.2, 0.3, 0.4],
+    'model__reg_alpha': [0, 0.001, 0.005, 0.01, 0.05],
+    'model__reg_lambda': [0, 0.001, 0.005, 0.01, 0.05]
     }
 
 
