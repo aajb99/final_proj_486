@@ -40,19 +40,15 @@ pd.set_option('display.max_columns', None)
 # feature engineering: added new features of averages of SA for previous five years (by month)
 snow_main_fteng = pd.read_csv('snow_main_new.csv')
 
-#%%
-# Matt's feature eng
-months = ["Jan","Feb"]
-snow_main_fteng["Snow Ratio"] = snow_main_fteng[months].sum(axis=1).div(snow_main_fteng["Mar"] + .001)
 
 #%%
 ### Drop NAs from original dataset:
 # Check for features containing null obs
-features_na = snow_main_fteng.columns[snow_main_fteng.isna().any()].tolist()
-features_na_drop = features_na[11:17]
+# features_na = snow_main_fteng.columns[snow_main_fteng.isna().any()].tolist()
+# features_na_drop = features_na[11:17]
 
-# snow_main_clean drops NA's in specified features
-snow_main_clean = snow_main_fteng.dropna(subset=features_na_drop) if features_na_drop else snow_main_fteng
+# # snow_main_clean drops NA's in specified features
+# snow_main_clean = snow_main_fteng.dropna(subset=features_na_drop) if features_na_drop else snow_main_fteng
 
 
 # %%
@@ -64,11 +60,21 @@ snow_main_clean = snow_main_fteng.dropna(subset=features_na_drop) if features_na
 # snow_main_clean['County'] = snow_main_clean['County'].astype('category')
 
 # Encode categorical features
+snow_main_clean = snow_main_fteng
+snow_main_clean['Apr'] = snow_main_clean['Apr'].fillna(0.001)
 snow_main_clean = pd.get_dummies(snow_main_clean, columns=['Site_Name', 'County'])
 
 # #%%
 # snow_main_clean = snow_main_clean.iloc[:, 0:19]
 
+#%%
+# Matt's feature eng
+months = ["Jan","Feb","Mar"]
+snow_main_clean["Snow to Elevation"] = snow_main_clean[months].sum(axis=1).div(snow_main_clean["Elev"])
+
+# y = snow_main_clean["Apr"] + .001
+# y = y.fillna(0.001)
+# X = snow_main_clean.drop(["Apr","Apr (WE)","May", "May (WE)", "Jun", "Jun (WE)"], axis=1)
 
 # %%
 # Parse sets
@@ -76,12 +82,6 @@ X = snow_main_clean.drop(['Apr', 'Apr (WE)', 'May', 'May (WE)', 'Jun', 'Jun (WE)
 y = snow_main_clean['Apr']
 
 Xtrain, Xtest, ytrain, ytest = train_test_split(X, y, random_state=307, test_size=.2)
-
-# #%%
-# ytest
-
-# #%%
-# Xtest
 
 
 # %%
@@ -96,9 +96,6 @@ Xtrain, Xtest, ytrain, ytest = train_test_split(X, y, random_state=307, test_siz
 numeric_features = X.select_dtypes(include=['float64', 'int64']).columns
 num_transformer = Pipeline([
   ('imputer',SimpleImputer(strategy='median')),
-#   ('poly_features', PolynomialFeatures(include_bias=False)),
-#   ('fit_transform', BathroomsTextCleaner()),
-#   ('percentile', SelectPercentile(f_regression, percentile=20)),
   ('rounder', FunctionTransformer(np.round, validate=False)),
   ('scaler', StandardScaler())
 ])
