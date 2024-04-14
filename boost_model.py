@@ -9,7 +9,7 @@ from sklearn.preprocessing import StandardScaler, OneHotEncoder, PolynomialFeatu
 from sklearn.pipeline import make_pipeline, Pipeline
 from sklearn.impute import KNNImputer, SimpleImputer
 from sklearn.model_selection import train_test_split, cross_val_score, GridSearchCV, RandomizedSearchCV, LeaveOneOut, KFold
-from sklearn.metrics import accuracy_score, recall_score, f1_score, confusion_matrix, classification_report, mean_squared_error, mean_absolute_error
+from sklearn.metrics import accuracy_score, recall_score, f1_score, confusion_matrix, classification_report, mean_squared_error, mean_absolute_error, accuracy_score, r2_score
 from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 from sklearn.inspection import PartialDependenceDisplay
 import pandas as pd

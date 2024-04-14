@@ -9,7 +9,7 @@ from sklearn.preprocessing import StandardScaler, OneHotEncoder, PolynomialFeatu
 from sklearn.pipeline import make_pipeline, Pipeline
 from sklearn.impute import KNNImputer, SimpleImputer
 from sklearn.model_selection import train_test_split, cross_val_score, GridSearchCV, RandomizedSearchCV, LeaveOneOut, KFold
-from sklearn.metrics import accuracy_score, recall_score, f1_score, confusion_matrix, classification_report, mean_squared_error, mean_absolute_error
+from sklearn.metrics import accuracy_score, recall_score, f1_score, confusion_matrix, classification_report, mean_squared_error, mean_absolute_error, accuracy_score, r2_score
 from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 from sklearn.inspection import PartialDependenceDisplay
 import pandas as pd
@@ -126,7 +126,7 @@ pipe_reg = Pipeline(
 # Param grid search and running rf model
 hyperparameter_grid = {
     'model__n_estimators': [50, 100, 300, 500],
-    'model__max_leaf_nodes': [4, 8, 16, 32],
+    # 'model__max_leaf_nodes': [4, 8, 16, 32],
     # 'model__max_features': [3, 5, 10, 15, None],
     # 'model__min_samples_leaf':[1, 3, 5, 10],
     'model__max_depth': [1, 3, 5, 10, 15, 20]
@@ -154,13 +154,24 @@ y_preds_test = rs.predict(Xtest)
 
 
 # %%
-# Root Mean Squared Error
-# np.sqrt(mean_squared_error(ytest, y_preds_test))
-np.sqrt(mean_squared_error(ytest, y_preds_test))
+# Root Mean Squared Error/ other metrics
+print("Random Forest Regressor R2 Score:",r2_score(ytest, y_preds_test))
+print("Random Forest Regressor MAE :",mean_absolute_error(y_pred=y_preds_test,y_true=ytest))
+print("Random Forest Regressor MSE:",mean_squared_error(y_pred=y_preds_test,y_true=ytest))
+print("Random Forest Regressor RMSE:",np.sqrt(mean_squared_error(y_pred=y_preds_test,y_true=ytest)))
+
+y_train_pred = rs.predict(Xtrain)
+
+# Calculate the training MSE
+training_mse = mean_squared_error(ytrain, y_train_pred)
+print("Random Forest Regressor Training MSE:", training_mse)
+rs.score(Xtrain,ytrain)
 
 # %%
-# Compare to ytest variance
-np.std(ytest)
+# Train R^2
+r2_score(ytrain, y_train_pred)
+
+
 # %%
 
 test_comparison = pd.DataFrame({'True Val': ytest, 'Prediction': y_preds_test})
