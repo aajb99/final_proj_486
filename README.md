@@ -8,15 +8,22 @@ Null snow accumulation observations were replaced with their respective WE level
 
 ## Table of Contents
 
-- [Folders](folders)
+- Folders
   1. [EDA](eda)
      - Contents:
-       - eda.py : file that contains the visualizations used on our report
+       - eda.py : file that contains the visualizations used in our report
        - regression_analysis.ipynb: file that contains a regression model used for feature significant test
        - streamlit_dashboard.py: dashboard that contains the EDA mentioned in our report
   3. [Models](models)
-  4. [Docs](docs)
-  5. [Feature Engineering 1](fe1_files)
+      - Contents:
+        - final_mod_rf.ipynb: file that contains all KNN, Lasso, SVM, XGBoost, and Random Forest models uses FE 1, FE 2, and a scrapped feature. Also includes SHAP analysis on the best model.
+        - nn.ipynb: file that contains a deep learning model using FE 2.
+        - rf_fe1_model.ipynb: file that contains a Random Forest model using FE 1.
+  5. [Docs](docs)
+     - Contents:
+       - Final Project Group Names.pdf: pdf containing all group member names 
+       - Stat486_Final_Project.pdf: pdf containing the written report
+  6. [Feature Engineering 1](fe1_files)
       - Contents: 
           - final_data_setup2.py: file that sets up the first feature
           - snow_site_new.csv: a dataset that includes this feature.
@@ -24,5 +31,8 @@ Null snow accumulation observations were replaced with their respective WE level
      - Contents: 
          - MattJensenCode.ipynb: Matt Jensen's original code that sets up feature two and ran 4 models
          - miscellaneous.py: Aaron Brown's miscellaneous code for his portion.
-  8. 
+         - xgboost_model.py: Aaron's extra xgboost model.
+  8. [Images](images)
+     - Contents:
+       - Contains all the images used in the report and presentation
 
