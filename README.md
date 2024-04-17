@@ -8,6 +8,6 @@ Null snow accumulation observations were replaced with their respective WE level
 at all months).
 
 Table of Contents:
-site_snow.csv - dataset
-MattJensencode.ipynb - Matt J's code which includes Feature 2 creation and several linear and tree models
+site_snow.csv - dataset \n
+MattJensencode.ipynb - Matt J's code which includes Feature 2 creation and several linear and tree models \n
 blackley.ipynb - Matt B's code whcih includes the deep learning model
