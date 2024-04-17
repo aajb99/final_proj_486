@@ -14,6 +14,6 @@ at all months).
     - Models <br /> 
     - Docs <br />
     - Extra Files <br />
-       - Additional EDA Contains: correlation matrices
+       - Additional EDA Contains: correlation matrices <br />
     - Miscellaneous
     
