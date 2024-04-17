@@ -7,10 +7,8 @@ Features include the SNOTEL site's name, site elevation (ft), lat, lon, year ins
 Null snow accumulation observations were replaced with their respective WE levels multiplied by a "Snow Water Equivalent Coefficient" (average ratio of snow accumulation to WE level across all observations 
 at all months).
 
-Table of Contents:
+## Table of Contents:
 
-site_snow.csv - dataset
-
-MattJensencode.ipynb - Matt J's code which includes Feature 2 creation and several linear and tree models
-
-blackley.ipynb - Matt B's code whcih includes the deep learning model
+-site_snow.csv: dataset
+-MattJensencode.ipynb: Matt J's code which includes Feature 2 creation and several linear and tree models
+-blackley.ipynb: Matt B's code whcih includes the deep learning model
