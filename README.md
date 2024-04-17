@@ -11,7 +11,7 @@ Null snow accumulation observations were replaced with their respective WE level
 - [Folders](#folders)
   1. [EDA](#eda)
   2. [Models](#models)
-  3. [Docs](#docs)
+  3. [Docs](docs)
   4. [Extra Files](#extra-files)
      - [Additional EDA: EDA on Feature correlations with FE 1](#additional-eda-eda-on-feature-correlations-with-fe-1)
   5. [Miscellaneous](#miscellaneous)
