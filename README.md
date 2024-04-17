@@ -14,6 +14,6 @@ at all months).
     2. Models <br /> 
     3. Docs <br />
     4. Extra Files <br />
-       - Additional EDA Contains: correlation matrices <br />
+       - Additional EDA: EDA on Feature correlations with FE 1 <br />
     5. Miscellaneous
     
