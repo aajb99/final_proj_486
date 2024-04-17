@@ -30,7 +30,7 @@ Null snow accumulation observations were replaced with their respective WE level
      - Contents: 
          - MattJensenCode.ipynb: Matt Jensen's original code that sets up feature two and ran 4 models
          - miscellaneous.py: Aaron Brown's miscellaneous code for his portion.
-         - xgboost_model.py: Aaron's extra xgboost model.
+         - xgboost_model.py: Aaron's extra xgboost code.
   8. [Images](images)
      - Contents:
        - Contains all the images used in the report and presentation
