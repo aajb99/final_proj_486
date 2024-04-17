@@ -16,7 +16,7 @@ from sklearn.inspection import PartialDependenceDisplay
 
 #%%
 
-snow_main = pd.read_csv('../snow_main_new.csv')
+snow_main = pd.read_csv('../fe1_data/snow_main_new.csv')
 
 
 # %%
