@@ -10,10 +10,10 @@ at all months).
 ## Table of Contents:
 
   **Folders** <br />
-    - EDA <br />
-    - Models <br /> 
-    - Docs <br />
-    - Extra Files <br />
+    1. EDA <br />
+    2. Models <br /> 
+    3. Docs <br />
+    4. Extra Files <br />
        - Additional EDA Contains: correlation matrices <br />
-    - Miscellaneous
+    5. Miscellaneous
     
