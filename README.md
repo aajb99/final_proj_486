@@ -8,7 +8,7 @@ Null snow accumulation observations were replaced with their respective WE level
 
 ## Table of Contents
 
-- [Folders](final_proj_486)
+- [Folders]
   1. [EDA](eda)
      - Contents:
        - eda.py : file that contains the visualizations used in our report
