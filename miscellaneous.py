@@ -23,7 +23,7 @@ from sklearn.inspection import PartialDependenceDisplay
 snow_main = pd.read_csv('site_snow.csv')
 
 #%%
-snow_main
+len(snow_main['County'].unique())
 
 #%%
 
