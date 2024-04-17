@@ -10,9 +10,15 @@ Null snow accumulation observations were replaced with their respective WE level
 
 - [Folders](folders)
   1. [EDA](eda)
-  2. [Models](models)
-  3. [Docs](docs)
-  4. [Extra Files](extra-files)
-     - Additional EDA: EDA on Feature correlations with FE 1(additional-eda-eda-on-feature-correlations-with-fe-1)
-  5. [Miscellaneous](miscellaneous)
+     - 
+  3. [Models](models)
+  4. [Docs](docs)
+  5. [fe1_data](fe1_data)
+      - Contents: 
+          - final_data_setup2.py file that setups the first feature
+          - snow_site_new.csv, a dataset that includes this feature.
+  7. [Extra Files](extra-files)
+     - Contents: 
+     - EDA on Feature correlations with FE 1
+  8. [Miscellaneous](miscellaneous)
 
