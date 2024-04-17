@@ -8,7 +8,7 @@ Null snow accumulation observations were replaced with their respective WE level
 
 ## Table of Contents
 
-- [olders
+- Folders
   1. [EDA](eda)
      - Contents:
        - eda.py : file that contains the visualizations used in our report
@@ -21,8 +21,8 @@ Null snow accumulation observations were replaced with their respective WE level
         - rf_fe1_model.ipynb: file that contains a Random Forest model using FE 1.
   5. [Docs](docs)
      - Contents:
-       -Final Project Group Names.pdf: pdf containing all group member names
-       -Stat486_Final_Project.pdf: pdf containing written report.
+       -Final Project Group Names.pdf: pdf containing all group member names <br \>
+       -Stat486_Final_Project.pdf: pdf containing the written report <br \>
   6. [Feature Engineering 1](fe1_files)
       - Contents: 
           - final_data_setup2.py: file that sets up the first feature
