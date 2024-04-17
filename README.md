@@ -9,6 +9,4 @@ at all months).
 
 ## Table of Contents:
 
-  -site_snow.csv: dataset <br />
-  -MattJensencode.ipynb: Matt J's code which includes Feature 2 creation and several linear and tree models <br />
-  -blackley.ipynb: Matt B's code whcih includes the deep learning model <br />
+  -
