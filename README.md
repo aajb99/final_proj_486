@@ -12,4 +12,8 @@ at all months).
   **Folders** <br />
     - EDA <br />
     - Models <br /> 
-    - 
+    - Docs <br />
+    - Extra Files <br />
+       - Additional EDA Contains: correlation matrices
+    - Miscellaneous
+    
