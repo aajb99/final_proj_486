@@ -16,7 +16,7 @@ from sklearn.inspection import PartialDependenceDisplay
 
 #%%
 
-snow_main = pd.read_csv('snow_main_new.csv')
+snow_main = pd.read_csv('../snow_main_new.csv')
 
 
 # %%
@@ -55,14 +55,6 @@ snow_clean_num_mat = snow_clean_numeric.corr()
 sns.heatmap(snow_clean_num_mat, annot=False, cmap='YlGnBu')
 plt.title('Correlation Heatmap')
 # plt.xticks(rotation=1, fontsize=8)
-
-
-
-
-
-
-
-
 
 
 # %%
