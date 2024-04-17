@@ -1,6 +1,6 @@
 # Stat 486 Snow Accumulation Study
 
-For our final project, we conducted an analysis on snow accumulation patterns spanning several decades in Utah.  Our aim was to discern trends in snow accumulation over time and ascertain whether there are significant indications of declining snow levels across the state, and if so, determine an effective predictive model to aid in predicting for the expected snow accumulation totals near the end of the season, which will prove useful for local communities in estimating the environmental conditions for the upcoming year. This repository includes all documents, visualizations, and coding files related to this project.
+For our final project, we conducted an analysis on snow accumulation patterns spanning several decades in Utah.  Our aim was to discern trends in snow accumulation over time and ascertain whether there are significant indications of declining snow levels across the state, and if so, determine an effective predictive model to aid in predicting for the expected snow accumulation totals near the end of the season, which will prove useful for local communities in estimating the environmental conditions for the upcoming year. This repository includes all documents, visualizations, and code files related to this project.
 
 Data: site_snow.csv is a cleaned dataset with observations scraped from the USDA's Air and Water Database: https://wcc.sc.egov.usda.gov/nwcc/snow-course-sites.jsp?state=UT.
 
