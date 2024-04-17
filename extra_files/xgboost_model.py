@@ -39,7 +39,7 @@ pd.set_option('display.max_columns', None)
 #%%
 # Import data
 # feature engineering: added new features of averages of SA for previous five years (by month)
-snow_main_fteng = pd.read_csv('snow_main_new.csv')
+snow_main_fteng = pd.read_csv('../fe1_files/snow_main_new.csv')
 
 #%%
 ### Drop NAs from original dataset:

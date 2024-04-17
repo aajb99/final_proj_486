@@ -16,7 +16,7 @@ from sklearn.inspection import PartialDependenceDisplay
 
 #%%
 
-snow_main = pd.read_csv('site_snow.csv')
+snow_main = pd.read_csv('../site_snow.csv')
 # snow_main['Jan'] = snow_main['Jan'].round(0)
 
 
@@ -128,9 +128,9 @@ for location in snow_main['Site_Name'].unique():
 snow_main_new = pd.DataFrame(snow_main_new_rows)
 
 # Save the DataFrame to CSV
-snow_main_new.to_csv('snow_main_new.csv', index=False)
+# snow_main_new.to_csv('snow_main_new.csv', index=False)
 
-print("DataFrame saved to CSV successfully.")
+# print("DataFrame saved to CSV successfully.")
 
 
 # %%
