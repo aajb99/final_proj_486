@@ -10,15 +10,19 @@ Null snow accumulation observations were replaced with their respective WE level
 
 - [Folders](folders)
   1. [EDA](eda)
-     - 
+     - Contents:
+       - eda.py : file that contains the visualizations used on our report
+       - regression_analysis.ipynb: file that contains a regression model used for feature significant test
+       - streamlit_dashboard.py: dashboard that contains the EDA mentioned in our report
   3. [Models](models)
   4. [Docs](docs)
-  5. [fe1_data](fe1_data)
+  5. [Feature Engineering 1](fe1_files)
       - Contents: 
-          - final_data_setup2.py file that setups the first feature
-          - snow_site_new.csv, a dataset that includes this feature.
+          - final_data_setup2.py: file that sets up the first feature
+          - snow_site_new.csv: a dataset that includes this feature.
   7. [Extra Files](extra-files)
      - Contents: 
-     - EDA on Feature correlations with FE 1
-  8. [Miscellaneous](miscellaneous)
+         - MattJensenCode.ipynb: Matt Jensen's original code that sets up feature two and ran 4 models
+         - miscellaneous.py: Aaron Brown's miscellaneous code for his portion.
+  8. 
 
