@@ -9,4 +9,6 @@ at all months).
 
 ## Table of Contents:
 
-  -
+  #Folders
+  - EDA <br />
+  - Models <br /> 
